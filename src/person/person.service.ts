@@ -4,6 +4,10 @@ import { UpdatePersonDto } from './dto/update-person.dto';
 
 @Injectable()
 export class PersonService {
+  xxx() {
+    return 'xxx';
+  }
+
   create(createPersonDto: CreatePersonDto) {
     return `received: ${JSON.stringify(createPersonDto)}`;
   }
