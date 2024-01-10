@@ -1,13 +1,12 @@
-import { Injectable, Inject } from '@nestjs/common';
-// import { OtherService } from './other/other.service';
-// import { PersonService } from './person/person.service';
+import { Inject, Injectable } from '@nestjs/common';
+import { BbbService } from './bbb/bbb.service';
 
 @Injectable()
 export class AppService {
-  // @Inject(OtherService)
-  // private readonly otherService: OtherService;
+  @Inject(BbbService)
+  private readonly bbbModule: BbbService;
 
   getHello(): string {
-    return 'Hello World!';
+    return 'Hello World!' + this.bbbModule.findAll();
   }
 }
