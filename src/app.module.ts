@@ -1,9 +1,6 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LogMiddleware } from './log.middleware';
-import { APP_GUARD } from '@nestjs/core';
-import { LoginGuard } from './login.guard';
 
 @Module({
   imports: [],
@@ -18,10 +15,4 @@ import { LoginGuard } from './login.guard';
     // },
   ],
 })
-export class AppModule {
-  // 配置中间件
-  configure(consumer: MiddlewareConsumer) {
-    // 路由中间件
-    consumer.apply(LogMiddleware).forRoutes('aaa*');
-  }
-}
+export class AppModule { }
